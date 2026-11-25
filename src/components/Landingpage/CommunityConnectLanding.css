@@ -807,7 +807,7 @@
   }
 
   .cc-header > div:first-child {
-    min-height: 70px;
+    min-height: 56px;
     padding-right: 16px;
     padding-left: 16px;
   }
@@ -831,15 +831,54 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
+  #home > div.relative.mx-auto.max-w-7xl > div.grid > div:first-child {
+    padding-top: 12px;
+    padding-bottom: 0;
+  }
+
   #home .cc-home-copy {
     width: min(58%, 430px);
-    padding-bottom: 12px;
+  }
+
+  #home > div.relative.mx-auto.max-w-7xl > div.grid > div:first-child > div:first-child {
+    margin-bottom: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+  #home h1 {
+    font-size: clamp(2rem, 4vw, 2.7rem);
+  }
+
+  #home p {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  #home .cc-hero-actions {
+    margin-top: 14px;
   }
 
   #home {
     padding-top: 14px;
     padding-bottom: 8px;
     background-size: cover, auto 100%;
+  }
+
+  #home > div.relative.mx-auto.max-w-7xl > div.mt-5.grid > div {
+    min-height: 52px;
+    gap: 8px;
+    padding: 2px 9px;
+  }
+
+  #home > div.relative.mx-auto.max-w-7xl > div.mt-5.grid > div img {
+    width: 36px;
+    height: 36px;
+  }
+
+  #home > div.relative.mx-auto.max-w-7xl > div.mt-5.grid > div > div {
+    font-size: 11px;
+    line-height: 1.2;
   }
 
   #services .grid.gap-3 {
