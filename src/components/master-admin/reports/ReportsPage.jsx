@@ -15,15 +15,15 @@ export default function ReportsPage() {
           ['Scheduled Reports', '9', Activity],
           ['Growth Snapshot', '+14.8%', TrendingUp],
         ].map(([label, value, Icon]) => (
-          <article key={label} className="rounded-2xl border border-[#d5e9e6] bg-white p-4">
-            <Icon size={16} className="text-[#044b47]" />
-            <p className="mt-3 text-2xl font-semibold text-slate-900">{value}</p>
-            <p className="text-sm text-slate-500">{label}</p>
+          <article key={label} className="rounded-2xl border border-[#e2d2ae] bg-[#fffdf8] p-4">
+            <Icon size={16} className="text-[#8c5e0f]" />
+            <p className="mt-3 text-2xl font-semibold text-[#092754]">{value}</p>
+            <p className="text-sm text-[#455168]">{label}</p>
           </article>
         ))}
       </div>
-      <article className="rounded-2xl border border-[#d5e9e6] bg-white p-4">
-        <h2 className="text-lg font-semibold text-slate-900">Reports Center</h2>
+      <article className="rounded-2xl border border-[#e2d2ae] bg-[#fffdf8] p-4">
+        <h2 className="text-lg font-semibold text-[#092754]" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>Reports Center</h2>
         <div className="mt-3 overflow-x-auto">
           <table className="w-full min-w-[700px] text-left text-sm">
             <thead>

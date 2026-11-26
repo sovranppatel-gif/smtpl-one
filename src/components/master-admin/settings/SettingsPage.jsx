@@ -96,64 +96,64 @@ export default function SettingsPage() {
           ['Contact Touchpoints', '2', Phone],
           ['Legal Pages', '2', ShieldCheck],
         ].map(([label, value, Icon]) => (
-          <article key={label} className="rounded-2xl border border-[#d5e9e6] bg-white p-4">
-            <Icon size={16} className="text-[#044b47]" />
-            <p className="mt-3 text-2xl font-semibold text-slate-900">{value}</p>
-            <p className="text-sm text-slate-500">{label}</p>
+          <article key={label} className="rounded-2xl border border-[#e2d2ae] bg-[#fffdf8] p-4">
+            <Icon size={16} className="text-[#8c5e0f]" />
+            <p className="mt-3 text-2xl font-semibold text-[#092754]">{value}</p>
+            <p className="text-sm text-[#455168]">{label}</p>
           </article>
         ))}
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-[#d5e9e6] bg-white p-4 sm:p-5">
-        <h2 className="text-lg font-semibold text-slate-900">Landing Page Settings</h2>
-        <p className="text-sm text-slate-500">
+      <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-[#e2d2ae] bg-[#fffdf8] p-4 sm:p-5">
+        <h2 className="text-lg font-semibold text-[#092754]" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>Landing Page Settings</h2>
+        <p className="text-sm text-[#455168]">
           Update footer/header phone, social links, and legal links shown on the public landing page.
         </p>
 
         <div className="grid gap-3 sm:grid-cols-2">
-          <label className="space-y-1 text-sm text-slate-700">
+          <label className="space-y-1 text-sm text-[#092754] font-medium">
             <span>Company Name</span>
-            <input value={form.companyName} onChange={handleChange('companyName')} className="h-10 w-full rounded-lg border border-[#d5e9e6] px-3 outline-none focus:border-[#48f0e7]" />
+            <input value={form.companyName} onChange={handleChange('companyName')} className="h-10 w-full rounded-lg border border-[#d5c5a3] bg-white px-3 text-[#111d36] outline-none focus:border-[#092754]" />
           </label>
-          <label className="space-y-1 text-sm text-slate-700">
+          <label className="space-y-1 text-sm text-[#092754] font-medium">
             <span>Tagline</span>
-            <input value={form.tagline} onChange={handleChange('tagline')} className="h-10 w-full rounded-lg border border-[#d5e9e6] px-3 outline-none focus:border-[#48f0e7]" />
+            <input value={form.tagline} onChange={handleChange('tagline')} className="h-10 w-full rounded-lg border border-[#d5c5a3] bg-white px-3 text-[#111d36] outline-none focus:border-[#092754]" />
           </label>
-          <label className="space-y-1 text-sm text-slate-700">
+          <label className="space-y-1 text-sm text-[#092754] font-medium">
             <span>Contact Phone</span>
-            <input value={form.contactPhone} onChange={handleChange('contactPhone')} className="h-10 w-full rounded-lg border border-[#d5e9e6] px-3 outline-none focus:border-[#48f0e7]" />
+            <input value={form.contactPhone} onChange={handleChange('contactPhone')} className="h-10 w-full rounded-lg border border-[#d5c5a3] bg-white px-3 text-[#111d36] outline-none focus:border-[#092754]" />
           </label>
-          <label className="space-y-1 text-sm text-slate-700">
+          <label className="space-y-1 text-sm text-[#092754] font-medium">
             <span>Contact Email</span>
-            <input value={form.contactEmail} onChange={handleChange('contactEmail')} className="h-10 w-full rounded-lg border border-[#d5e9e6] px-3 outline-none focus:border-[#48f0e7]" />
+            <input value={form.contactEmail} onChange={handleChange('contactEmail')} className="h-10 w-full rounded-lg border border-[#d5c5a3] bg-white px-3 text-[#111d36] outline-none focus:border-[#092754]" />
           </label>
-          <label className="space-y-1 text-sm text-slate-700">
+          <label className="space-y-1 text-sm text-[#092754] font-medium">
             <span>Facebook Link</span>
-            <input value={form.facebook} onChange={handleChange('facebook')} className="h-10 w-full rounded-lg border border-[#d5e9e6] px-3 outline-none focus:border-[#48f0e7]" />
+            <input value={form.facebook} onChange={handleChange('facebook')} className="h-10 w-full rounded-lg border border-[#d5c5a3] bg-white px-3 text-[#111d36] outline-none focus:border-[#092754]" />
           </label>
-          <label className="space-y-1 text-sm text-slate-700">
+          <label className="space-y-1 text-sm text-[#092754] font-medium">
             <span>Instagram Link</span>
-            <input value={form.instagram} onChange={handleChange('instagram')} className="h-10 w-full rounded-lg border border-[#d5e9e6] px-3 outline-none focus:border-[#48f0e7]" />
+            <input value={form.instagram} onChange={handleChange('instagram')} className="h-10 w-full rounded-lg border border-[#d5c5a3] bg-white px-3 text-[#111d36] outline-none focus:border-[#092754]" />
           </label>
-          <label className="space-y-1 text-sm text-slate-700">
+          <label className="space-y-1 text-sm text-[#092754] font-medium">
             <span>LinkedIn Link</span>
-            <input value={form.linkedin} onChange={handleChange('linkedin')} className="h-10 w-full rounded-lg border border-[#d5e9e6] px-3 outline-none focus:border-[#48f0e7]" />
+            <input value={form.linkedin} onChange={handleChange('linkedin')} className="h-10 w-full rounded-lg border border-[#d5c5a3] bg-white px-3 text-[#111d36] outline-none focus:border-[#092754]" />
           </label>
-          <label className="space-y-1 text-sm text-slate-700">
+          <label className="space-y-1 text-sm text-[#092754] font-medium">
             <span>Twitter Link</span>
-            <input value={form.twitter} onChange={handleChange('twitter')} className="h-10 w-full rounded-lg border border-[#d5e9e6] px-3 outline-none focus:border-[#48f0e7]" />
+            <input value={form.twitter} onChange={handleChange('twitter')} className="h-10 w-full rounded-lg border border-[#d5c5a3] bg-white px-3 text-[#111d36] outline-none focus:border-[#092754]" />
           </label>
-          <label className="space-y-1 text-sm text-slate-700">
+          <label className="space-y-1 text-sm text-[#092754] font-medium">
             <span>YouTube Link</span>
-            <input value={form.youtube} onChange={handleChange('youtube')} className="h-10 w-full rounded-lg border border-[#d5e9e6] px-3 outline-none focus:border-[#48f0e7]" />
+            <input value={form.youtube} onChange={handleChange('youtube')} className="h-10 w-full rounded-lg border border-[#d5c5a3] bg-white px-3 text-[#111d36] outline-none focus:border-[#092754]" />
           </label>
-          <label className="space-y-1 text-sm text-slate-700">
+          <label className="space-y-1 text-sm text-[#092754] font-medium">
             <span>Privacy Link</span>
-            <input value={form.privacy} onChange={handleChange('privacy')} className="h-10 w-full rounded-lg border border-[#d5e9e6] px-3 outline-none focus:border-[#48f0e7]" />
+            <input value={form.privacy} onChange={handleChange('privacy')} className="h-10 w-full rounded-lg border border-[#d5c5a3] bg-white px-3 text-[#111d36] outline-none focus:border-[#092754]" />
           </label>
-          <label className="space-y-1 text-sm text-slate-700">
+          <label className="space-y-1 text-sm text-[#092754] font-medium">
             <span>Terms Link</span>
-            <input value={form.terms} onChange={handleChange('terms')} className="h-10 w-full rounded-lg border border-[#d5e9e6] px-3 outline-none focus:border-[#48f0e7]" />
+            <input value={form.terms} onChange={handleChange('terms')} className="h-10 w-full rounded-lg border border-[#d5c5a3] bg-white px-3 text-[#111d36] outline-none focus:border-[#092754]" />
           </label>
         </div>
 
@@ -163,7 +163,7 @@ export default function SettingsPage() {
         <button
           type="submit"
           disabled={saving}
-          className="inline-flex items-center gap-2 rounded-full bg-[#044b47] px-4 py-2 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-70"
+          className="inline-flex items-center gap-2 rounded-full bg-[#092754] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#10376e] disabled:cursor-not-allowed disabled:opacity-70"
         >
           <Save size={15} />
           {saving ? 'Saving...' : 'Save Settings'}

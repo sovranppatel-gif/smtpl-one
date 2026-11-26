@@ -1,36 +1,64 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./components/Landingpage/CommunityConnectLanding.jsx";
-import BuildingCreativityLanding from "./components/community/BuildingCreativityLanding.jsx";
-import CommunityJoinFormPage from "./components/community/CommunityJoinFormPage.jsx";
 import { AuthProvider } from "./context/auth.jsx";
 import LoadingScreen from "./components/LoadingScreen.jsx";
 import NavigationWrapper from "./components/NavigationWrapper.jsx";
 
+const BuildingCreativityLanding = lazy(
+  () => import("./components/community/BuildingCreativityLanding.jsx"),
+);
+const CommunityJoinFormPage = lazy(
+  () => import("./components/community/CommunityJoinFormPage.jsx"),
+);
 
-// Master Admin Components
-import MasterAdmin from "./components/master-admin/MasterAdmin.jsx";
-import MasterAdminLogin from "./components/master-admin/pages/Login.jsx";
-import MasterAdminDashboard from "./components/master-admin/MasterDashboard.jsx";
-import LandingPageManage from "./components/master-admin/landing/ManageLandingPage.jsx";
+// Master Admin Components (lazy-loaded so '/' stays fast)
+const MasterAdmin = lazy(
+  () => import("./components/master-admin/MasterAdmin.jsx"),
+);
+const MasterAdminLogin = lazy(
+  () => import("./components/master-admin/pages/Login.jsx"),
+);
+const MasterAdminDashboard = lazy(
+  () => import("./components/master-admin/MasterDashboard.jsx"),
+);
+const LandingPageManage = lazy(
+  () => import("./components/master-admin/landing/ManageLandingPage.jsx"),
+);
+
+function withRouteFallback(node) {
+  return <Suspense fallback={<LoadingScreen />}>{node}</Suspense>;
+}
 
 const router = createBrowserRouter([
   {
     element: <NavigationWrapper />,
     children: [
       { path: "/", element: <LandingPage /> },
-      { path: "/building-creativity", element: <BuildingCreativityLanding /> },
+      {
+        path: "/building-creativity",
+        element: withRouteFallback(<BuildingCreativityLanding />),
+      },
       // Google Forms–style standalone form link
-      { path: "/CommunityJoinForm", element: <CommunityJoinFormPage /> },
+      {
+        path: "/CommunityJoinForm",
+        element: withRouteFallback(<CommunityJoinFormPage />),
+      },
 
       // Master Admin Routes
       {
         path: "/master-admin",
-        element: <MasterAdmin />,
+        element: withRouteFallback(<MasterAdmin />),
         children: [
-          { index: true, element: <MasterAdminLogin /> },
-          { path: "dashboard", element: <MasterAdminDashboard /> },
-          { path: "landing-page", element: <LandingPageManage /> },
+          { index: true, element: withRouteFallback(<MasterAdminLogin />) },
+          {
+            path: "dashboard",
+            element: withRouteFallback(<MasterAdminDashboard />),
+          },
+          {
+            path: "landing-page",
+            element: withRouteFallback(<LandingPageManage />),
+          },
         ],
       },
 
